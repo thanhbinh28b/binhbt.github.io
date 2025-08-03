@@ -28,9 +28,9 @@
 ## Tổng quan về Project
 Dự án dự trên yêu cầu xử lý dữ liệu khách hàng cho Chương trình:  "Hoàn tiền (Cashback) cho các khách hàng sử dụng thẻ ảo - Virtual credict card (VCC) 
 ### Thể lệ của chương trình hoàn tiền:
-- Chỉ tiêu xét hoàn tiền: Là Tổng số tiền chi tiêu đã được quy đổi về USD trong một kỳ sao kê (Kỳ sao kê: Tính được từ ngày đầu tiên đến ngày cuối cùng của tháng). Chỉ tiêu xét hoàn tiền phải đạt giá trị nhỏ nhất được hoàn tiền (có tỷ lệ hoàn tiền > 0)
-- Tỷ lệ giao dịch thất bại: Tỷ lệ giao dịch thất bại trong một kỳ sao kê thấp hơn 10%
-- Giá trị trung bình của mỗi giao dịch - Average Transaction Value (ATV): ATV phải đạt trên 100 USD
+- **Chỉ tiêu xét hoàn tiền:** Là Tổng số tiền chi tiêu đã được quy đổi về USD trong một kỳ sao kê (Kỳ sao kê: Tính được từ ngày đầu tiên đến ngày cuối cùng của tháng). Chỉ tiêu xét hoàn tiền phải đạt giá trị nhỏ nhất được hoàn tiền (có tỷ lệ hoàn tiền > 0)
+- **Tỷ lệ giao dịch thất bại:** Tỷ lệ giao dịch thất bại trong một kỳ sao kê thấp hơn 10%
+- **Giá trị trung bình của mỗi giao dịch - Average Transaction Value (ATV):** ATV phải đạt trên 100 USD
 ### Nguyên tắc hoàn tiền 
 Khách hàng đáp ứng được thể lệ chương trình sẽ được hoàn tiền theo công thức sau:
 <p align="center">
@@ -48,18 +48,24 @@ Trong đó, Tỷ lệ hoàn tiền được xác định bằng Chỉ tiêu hoà
 | 6    | Trên 5,000,000 USD                                           | 0.7%            |
 
 ## Hướng dẫn sử dụng
-Dự án được 
+Dự án được đóng gói và chạy hoàn toàn tự động trong file Excel dạng xlsb
 
-### Installation
-- Steps on how to install this project, to use it.
-- Be very detailed here, For example, if you have tools which run on different operating systems, write installation steps for all of them.
+### Cài đặt
+Để có thể sử dụng được Báo cáo tự động, các bạn sẽ cần bật VBA trong Excel theo hướng dẫn của Microsoft [tại đây](https://support.microsoft.com/en-us/office/enable-or-disable-macros-in-microsoft-365-files-12b036fd-d140-4e74-b45e-16fed1a7e5c6)
 
+### Cấu trúc file báo cáo:
 ```
-$ add installations steps if you have to.
+Cashback Report for date of 2025.06.xlsb/
+├── Report/     # Báo cáo khách hàng được hoàn tiền trong kỳ báo cáo
+├── Check1/     # Bước 1: Tính Chit tiêu xét hoàn tiền và Giá trị trung bình của mỗi giao dịch
+├── Check2/     # Bước 2: Tính tỷ lệ giao dịch thất bại
+├── Check3/     # Bước 3: Tổng hợp dữ liệu về 3 chỉ tiêu đã được tính tại Bước 1 và Bước 2, kiểm tra các khách đủ điều kiện được hoàn tiền
+├── Auth/       # Dữ liệu đầu vào: Dữ liệu về Authorization Transaction
+├── Settle/     # Dữ liệu đầu vào: Dữ liệu về Settlement Transaction
+└── Note        # Bao gồm nút Run để chạy báo cáo, câu lệnh Query VBA, Kỳ báo cáo và các điều kiện để hoàn tiền
 ```
-
 ### Commands
-- Commands to start the project.
+- Bước 01: .
 
 ## Development
 If you want other people to contribute to this project, this is the section, make sure you always add this.
@@ -85,7 +91,7 @@ Cash back Project/
 │   └── Data.xlsx                    # Dữ liệu sample đầu vào để chạy thử cho Project
 ├── image/                           # Thư mục chứa hình ảnh minh họa
 ├── Report/
-│   └── Cashback Report for date of 2024.06_v1.xlsb   # Báo cáo hoàn thiện đã được đóng gói gồm Code và Data
+│   └── Cashback Report for date of 2025.06.xlsb   # Báo cáo hoàn thiện đã được đóng gói gồm Code và Data
 └── README.md                        # Tài liệu hướng dẫn
 ```
 
