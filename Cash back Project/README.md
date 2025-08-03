@@ -36,7 +36,7 @@ Khách hàng đáp ứng được thể lệ chương trình sẽ được hoàn
 <p align="center">
 <b>Giá trị hoàn tiền (Cashback Amount) = Chỉ tiêu xét hoàn tiền * Tỷ lệ hoàn tiền</b>
 </p>
-Trong đó, Tỷ lệ hoàn tiền được xác định bằng Chỉ tiêu hoàn tiền theo bảng sau:
+Trong đó, Tỷ lệ hoàn tiền được xác định bằng Chỉ tiêu hoàn tiền theo bảng sau: <br>
 | STT  | Chỉ tiêu xét hoàn tiền                                       | Tỷ lệ hoàn tiền |
 |------|--------------------------------------------------------------|-----------------|
 | 1    | Từ 20,000 USD đến dưới 50,000 USD                            | 0.1%            |
