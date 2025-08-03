@@ -1,12 +1,12 @@
 ## Mục lục
 
 - [Tổng quan về Dự án](#Tổng-quan-về-Dự-án)
-  - [Thể lệ của chương trình hoàn tiền](#thể-lệ-của-chương-trình-hoàn-tiền:)
+  - [Thể lệ của chương trình hoàn tiền](#thể-lệ-của-chương-trình-hoàn-tiền)
   - [Nguyên tắc hoàn tiền](#nguyên-tắc-hoàn-tiền)
 - [Hướng dẫn sử dụng](#Hướng-dẫn-sử-dụng)
   - [Cài đặt](#Cài-đặt)
-  - [Cấu trúc file báo cáo](#Cấu-trúc-file-báo-cáo:)
-  - [Các bước chạy báo cáo](#Các-bước-chạy-báo-cáo:)
+  - [Cấu trúc file báo cáo](#Cấu-trúc-file-báo-cáo)
+  - [Các bước chạy báo cáo](#Các-bước-chạy-báo-cáo)
 - [Chi tiết về dự án](#Chi-tiết-về-dự-án)
   - [Cấu trúc File](#Cấu-trúc-File)
   - [Cấu trúc câu lệnh chạy tự động](#Cấu-trúc-câu-lệnh-chạy-tự-động)
