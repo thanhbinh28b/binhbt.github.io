@@ -76,7 +76,7 @@ Write about setting up the working environment for your project.
 
 ## Chi tiết về dự án
 ### Cấu trúc File
-
+```
 Cash back Project/
 ├── Code/                            # Folder tổng chứa phần code VBA và query SQL được tách riêng để dễ theo dõi
 │   ├── Cashback Query.sql           # File chứa toàn bộ query SQL được sử dụng trong Project
@@ -87,6 +87,8 @@ Cash back Project/
 ├── Report/
 │   └── Cashback Report for date of 2024.06_v1.xlsb   # Báo cáo hoàn thiện đã được đóng gói gồm Code và Data
 └── README.md                        # Tài liệu hướng dẫn
+```
+
 ### Build
 Write the build Instruction here.
 
