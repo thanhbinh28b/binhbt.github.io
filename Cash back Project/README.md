@@ -33,8 +33,9 @@ Dự án dự trên yêu cầu xử lý dữ liệu khách hàng cho Chương tr
 - Giá trị trung bình của mỗi giao dịch - Average Transaction Value (ATV): ATV phải đạt trên 100 USD
 ### Nguyên tắc hoàn tiền 
 Khách hàng đáp ứng được thể lệ chương trình sẽ được hoàn tiền theo công thức sau:
-Giá trị hoàn tiền (Cashback Amount) = Chỉ tiêu xét hoàn tiền * Tỷ lệ hoàn tiền
-
+<p align="center">
+<b>Giá trị hoàn tiền (Cashback Amount) = Chỉ tiêu xét hoàn tiền * Tỷ lệ hoàn tiền
+</p>
 Trong đó, Tỷ lệ hoàn tiền được xác định bằng Chỉ tiêu hoàn tiền theo bảng sau:
 | STT  | Chỉ tiêu xét hoàn tiền                                       | Tỷ lệ hoàn tiền |
 |------|--------------------------------------------------------------|-----------------|
