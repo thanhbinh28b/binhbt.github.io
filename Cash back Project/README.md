@@ -34,7 +34,7 @@ Dự án dự trên yêu cầu xử lý dữ liệu khách hàng cho Chương tr
 ### Nguyên tắc hoàn tiền 
 Khách hàng đáp ứng được thể lệ chương trình sẽ được hoàn tiền theo công thức sau:
 <p align="center">
-<b>Giá trị hoàn tiền (Cashback Amount) = Chỉ tiêu xét hoàn tiền * Tỷ lệ hoàn tiền
+<b>Giá trị hoàn tiền (Cashback Amount) = Chỉ tiêu xét hoàn tiền * Tỷ lệ hoàn tiền</b>
 </p>
 Trong đó, Tỷ lệ hoàn tiền được xác định bằng Chỉ tiêu hoàn tiền theo bảng sau:
 | STT  | Chỉ tiêu xét hoàn tiền                                       | Tỷ lệ hoàn tiền |
