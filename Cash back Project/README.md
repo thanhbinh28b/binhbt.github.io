@@ -1,32 +1,21 @@
-# Introduction
-- Add your project logo.
-- Write a short introduction to the project.
-- If you are using badges, add them here.
+## Mục lục
 
-## Index
+- [Tổng quan về Dự án](#Tổng-quan-về-Dự-án)
+  - [Thể lệ của chương trình hoàn tiền](#thể-lệ-của-chương-trình-hoàn-tiền:)
+  - [Nguyên tắc hoàn tiền](#nguyên-tắc-hoàn-tiền)
+- [Hướng dẫn sử dụng](#Hướng-dẫn-sử-dụng)
+  - [Cài đặt](#Cài-đặt)
+  - [Cấu trúc file báo cáo](#Cấu-trúc-file-báo-cáo:)
+  - [Các bước chạy báo cáo](#Các-bước-chạy-báo-cáo:)
+- [Chi tiết về dự án](#Chi-tiết-về-dự-án)
+  - [Cấu trúc File](#Cấu-trúc-File)
+  - [Cấu trúc câu lệnh chạy tự động](#Cấu-trúc-câu-lệnh-chạy-tự-động)
+  - [Khả năng nâng cấp](#Khả-năng-nâng-cấp)
+- [Góp ý và đóng góp](#Góp-ý-và-đóng-góp) 
+- [Lưu ý](#Lưu-ý)
 
-- [About](#about)
-- [Usage](#usage)
-  - [Installation](#installation)
-  - [Commands](#commands)
-- [Development](#development)
-  - [Pre-Requisites](#pre-requisites)
-  - [Developmen Environment](#development-environment)
-  - [File Structure](#file-structure)
-  - [Build](#build)  
-  - [Deployment](#deployment)  
-- [Community](#community)
-  - [Contribution](#contribution)
-  - [Branches](#branches)
-  - [Guideline](guideline)  
-- [FAQ](#faq)
-- [Resources](#resources)
-- [Gallery](#gallery)
-- [Credit/Acknowledgment](#creditacknowledgment)
-- [License](#license)
-
-## Tổng quan về Project
-Dự án dự trên yêu cầu xử lý dữ liệu khách hàng cho Chương trình:  "Hoàn tiền (Cashback) cho các khách hàng sử dụng thẻ ảo - Virtual credict card (VCC) 
+## Tổng quan về Dự án
+Dự án dự trên yêu cầu xử lý dữ liệu khách hàng cho Chương trình:  "Hoàn tiền (Cashback) cho các khách hàng sử dụng thẻ ảo - Virtual credit card (VCC) 
 ### Thể lệ của chương trình hoàn tiền:
 - **Chỉ tiêu xét hoàn tiền:** Là Tổng số tiền chi tiêu đã được quy đổi về USD trong một kỳ sao kê (Kỳ sao kê: Tính được từ ngày đầu tiên đến ngày cuối cùng của tháng). Chỉ tiêu xét hoàn tiền phải đạt giá trị nhỏ nhất được hoàn tiền (có tỷ lệ hoàn tiền > 0)
 - **Tỷ lệ giao dịch thất bại:** Tỷ lệ giao dịch thất bại trong một kỳ sao kê thấp hơn 10%
@@ -47,6 +36,8 @@ Trong đó, Tỷ lệ hoàn tiền được xác định bằng Chỉ tiêu hoà
 | 5    | Từ 1,000,000 USD đến dưới 5,000,000 USD                      | 0.6%            |
 | 6    | Trên 5,000,000 USD                                           | 0.7%            |
 
+[🔝 Quay về đầu](#mục-lục)
+
 ## Hướng dẫn sử dụng
 Dự án được đóng gói và chạy hoàn toàn tự động trong file Excel dạng xlsb
 
@@ -57,28 +48,28 @@ Dự án được đóng gói và chạy hoàn toàn tự động trong file Exc
 ```
 Cashback Report for date of 2025.06.xlsb/
 ├── Report/     # Báo cáo khách hàng được hoàn tiền trong kỳ báo cáo
-├── Check1/     # Bước 1: Tính Chit tiêu xét hoàn tiền và Giá trị trung bình của mỗi giao dịch
+├── Check1/     # Bước 1: Tính Chỉ tiêu xét hoàn tiền và Giá trị trung bình của mỗi giao dịch
 ├── Check2/     # Bước 2: Tính tỷ lệ giao dịch thất bại
 ├── Check3/     # Bước 3: Tổng hợp dữ liệu về 3 chỉ tiêu đã được tính tại Bước 1 và Bước 2, kiểm tra các khách đủ điều kiện được hoàn tiền
 ├── Auth/       # Dữ liệu đầu vào: Dữ liệu về Authorization Transaction
 ├── Settle/     # Dữ liệu đầu vào: Dữ liệu về Settlement Transaction
 └── Note        # Bao gồm nút Run để chạy báo cáo, câu lệnh Query VBA, Kỳ báo cáo và các điều kiện để hoàn tiền
 ```
-### Commands
-- Bước 01: .
+### Các bước chạy báo cáo:
+- Bước 01: Đưa dữ liệu đầu vào của Authorization Transaction và Settlement Transaction tương ứng vào 2 sheet Data: Auth và Settle.
+- Bước 02: Thay đổi các thiết lập về điều kiện (Nếu cần) tại sheet Note:
++ Chỉ tiêu xét hoàn tiền: Tại ô B32 và C32
++ Tỷ lệ giao dịch thất bại: Tại ô B30 và C30
++ Giá trị trung bình của mỗi giao dịch: Tại ô B31 và C31
+- Bước 03: Thay đổi tỷ lệ hoàn tiền: Thiết lập điều kiện tại vùng B36:D43
+- Bước 04: Thay đổi kỳ báo cáo:
++ Ngày: Tại ô B22 (Thường sẽ điền là ngày cuối cùng của tháng)
+Chú ý: Nếu cần báo cáo theo ngày (không là toàn bộ tháng) thì tích "v" tại ô D22, mặc định là không tích.
++ Tháng: Tại ô B23
++ Năm: Tại ô B24
+- Bước 5: Chọn nút **RUN** để chạy báo cáo
 
-## Development
-If you want other people to contribute to this project, this is the section, make sure you always add this.
-
-### Pre-Requisites
-List all the pre-requisites the system needs to develop this project.
-- A tool
-- B tool
-
-### Development Environment
-Write about setting up the working environment for your project.
-- How to download the project...
-- How to install dependencies...
+[🔝 Quay về đầu](#mục-lục)
 
 ## Chi tiết về dự án
 ### Cấu trúc File
@@ -95,71 +86,62 @@ Cash back Project/
 └── README.md                        # Tài liệu hướng dẫn
 ```
 
-### Build
-Write the build Instruction here.
+### Cấu trúc câu lệnh chạy tự động
+Cấu trúc của câu lệnh được được chia thành 3 sub chính
+```
+AllStep/
+├── Step1/                 # Chương trình con để tạo sheet Check1
+│   ├── SQL_check1         # Sử dụng VBA để dùng ADO SQL đê lấy dữ liệu trên sheet1
+│   └── Check1             # Sử dụng VBA để tự động tạo công thức hàm để kiêm tra lại kết quả Query
+├── Step2/
+│   ├── SQL_check2         # Sử dụng VBA để dùng ADO SQL đê lấy dữ liệu trên sheet2
+│   └── Check2             # Sử dụng VBA để tự động tạo công thức hàm để kiêm tra lại kết quả Query
+└── Step3/
+    ├── Check3             # Sử dụng VBA để tự động gộp dữ liệu sheet1, sheet2, kiểm tra các khách đủ điều kiện được hoàn tiền và số tiền được hoàn
+    └── SQL_Report         # Sử dụng SQL để Query các trường hợp đủ điều kiện được hoàn tiền
+```
 
-### Deployment
-Write the deployment instruction here.
+Trong đó:
+- Nhóm chương trình con VBA: SQL_check1, SQL_check2, SQL_Report đều sử dụng các câu để gọi ADO SQL chỉ đến ô dữ liệu chứa câu lệnh Query SQL:
++ **SQL_check1**: Chỉ đến câu Query SQL tại ô A13 tại sheet Note
+```sql
+SELECT S.User_ID,S.KYC_Name,S.Pay_Currency,SUM(S.Pay_Amount),AVG(S.Pay_Amount) 
+FROM [Settle$] S 
+GROUP BY S.User_ID,S.KYC_Name,S.Pay_Currency  
+ORDER BY SUM(S.Pay_Amount) DESC										
+```
+![1754233743111](image/README/1754233743111.png)
 
-## Community
++ **SQL_check2**: Chỉ đến câu Query SQL tại ô A16 tại sheet Note
+```sql
+SELECT User_ID,KYC_Name,SUM(IIF(Status=""DECLINED"",1,0)),SUM(1),SUM(IIF(Status=""DECLINED"",1,0))/SUM(1)
+FROM [Auth$] 
+GROUP BY User_ID,KYC_Name 
+ORDER BY User_ID ASC										
+```
+![1754233789013](image/README/1754233789013.png)
 
-If it's open-source, talk about the community here, ask social media links and other links.
-
-### Contribution
-
- Your contributions are always welcome and appreciated. Following are the things you can do to contribute to this project.
-
- 1. **Report a bug** <br>
- If you think you have encountered a bug, and I should know about it, feel free to report it [here]() and I will take care of it.
-
- 2. **Request a feature** <br>
- You can also request for a feature [here](), and if it will viable, it will be picked for development.  
-
- 3. **Create a pull request** <br>
- It can't get better then this, your pull request will be appreciated by the community. You can get started by picking up any open issues from [here]() and make a pull request.
-
- > If you are new to open-source, make sure to check read more about it [here](https://www.digitalocean.com/community/tutorial_series/an-introduction-to-open-source) and learn more about creating a pull request [here](https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github).
-
-
-### Branches
-
- I use an agile continuous integration methodology, so the version is frequently updated and development is really fast.
-
-1. **`stage`** is the development branch.
-
-2. **`master`** is the production branch.
-
-3. No other permanent branches should be created in the main repository, you can create feature branches but they should get merged with the master.
-
-**Steps to work with feature branch**
-
-1. To start working on a new feature, create a new branch prefixed with `feat` and followed by feature name. (ie. `feat-FEATURE-NAME`)
-2. Once you are done with your changes, you can raise PR.
-
-**Steps to create a pull request**
-
-1. Make a PR to `stage` branch.
-2. Comply with the best practices and guidelines e.g. where the PR concerns visual elements it should have an image showing the effect.
-3. It must pass all continuous integration checks and get positive reviews.
-
-After this, changes will be merged.
++ **SQL_Report**: Chỉ đến câu Query SQL tại ô A19 tại sheet Note
+```sql
+SELECT User_ID,KYC_Name,Pay_Currency,Pay_Amount,Average_Pay_Amount,Declined_rate,Cash_back_Amount,Current_Cash_back_rate 
+FROM [Check3$] 
+WHERE Check_conditions=TRUE 
+ORDER BY Pay_Amount DESC										
+```
+![1754233882244](image/README/1754233882244.png)
 
 
-### Guideline
-coding guidelines or other things you want people to follow should follow.
+### Khả năng nâng cấp
+- Báo cáo linh hoạt trong trường hợp các điều kiện và tỷ lệ hoàn tiền thay đổi.
+- Dễ dàng tuỳ biên để lấy dữ liệu trừ 1 file độc lập riêng biệt
 
+[🔝 Quay về đầu](#mục-lục)
 
-## FAQ
-You can optionally add a FAQ section about the project.
+## Góp ý và đóng góp
+Rất hy vọng nhận được góp ý và đóng góp của mọi người để hoàn thiện hơn
+Mọi góp ý và đóng góp xin gửi về: buithanhbinh55.aof@gmail.com
 
-##  Resources
-Add important resources here
+## Lưu ý
+Dữ liệu được sử dụng tại Báo cáo là dữ liệu mẫu, đã được chuẩn hoá để có thể tương thích với dữ liệu thực tế
 
-##  Gallery
-Pictures of your project.
-
-## Credit/Acknowledgment
-Credit the authors here.
-
-##  License
-Add a license here, or a link to it.
+[🔝 Quay về đầu](#mục-lục)
