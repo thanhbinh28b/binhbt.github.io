@@ -27,10 +27,23 @@
 
 ## Tổng quan về Project
 Dự án dự trên yêu cầu xử lý dữ liệu khách hàng cho Chương trình:  "Hoàn tiền (Cashback) cho các khách hàng sử dụng thẻ ảo - Virtual credict card (VCC) 
-Thể lệ của chương trình hoàn tiền:
+### Thể lệ của chương trình hoàn tiền:
 - Chỉ tiêu xét hoàn tiền: Là Tổng số tiền chi tiêu đã được quy đổi về USD trong một kỳ sao kê (Kỳ sao kê: Tính được từ ngày đầu tiên đến ngày cuối cùng của tháng). Chỉ tiêu xét hoàn tiền phải đạt giá trị nhỏ nhất được hoàn tiền (có tỷ lệ hoàn tiền > 0)
 - Tỷ lệ giao dịch thất bại: Tỷ lệ giao dịch thất bại trong một kỳ sao kê thấp hơn 10%
 - Giá trị trung bình của mỗi giao dịch - Average Transaction Value (ATV): ATV phải đạt trên 100 USD
+### Nguyên tắc hoàn tiền 
+Khách hàng đáp ứng được thể lệ chương trình sẽ được hoàn tiền theo công thức sau:
+Giá trị hoàn tiền (Cashback Amount) = Chỉ tiêu xét hoàn tiền * Tỷ lệ hoàn tiền
+
+Trong đó, Tỷ lệ hoàn tiền được xác định bằng Chỉ tiêu hoàn tiền theo bảng sau:
+| STT  | Chỉ tiêu xét hoàn tiền                                       | Tỷ lệ hoàn tiền |
+|------|--------------------------------------------------------------|-----------------|
+| 1    | Từ 20,000 USD đến dưới 50,000 USD                            | 0.1%            |
+| 2    | Từ 50,000 USD đến dưới 100,000 USD                           | 0.3%            |
+| 3    | Từ 100,000 USD đến dưới 500,000 USD                          | 0.4%            |
+| 4    | Từ 500,000 USD đến dưới 1,000,000 USD                        | 0.5%            |
+| 5    | Từ 1,000,000 USD đến dưới 5,000,000 USD                      | 0.6%            |
+| 6    | Trên 5,000,000 USD                                           | 0.7%            |
 ## Usage
 Write about how to use this project.
 
