@@ -46,8 +46,9 @@ Trong đó, Tỷ lệ hoàn tiền được xác định bằng Chỉ tiêu hoà
 | 4    | Từ 500,000 USD đến dưới 1,000,000 USD                        | 0.5%            |
 | 5    | Từ 1,000,000 USD đến dưới 5,000,000 USD                      | 0.6%            |
 | 6    | Trên 5,000,000 USD                                           | 0.7%            |
-## Usage
-Write about how to use this project.
+
+## Hướng dẫn sử dụng
+Dự án được 
 
 ### Installation
 - Steps on how to install this project, to use it.
@@ -73,14 +74,19 @@ Write about setting up the working environment for your project.
 - How to download the project...
 - How to install dependencies...
 
+## Chi tiết về dự án
+### Cấu trúc File
 
-### File Structure
-Add a file structure here with the basic details about files, below is an example.
-
-| No | File Name | Details 
-|----|------------|-------|
-| 1  | index | Entry point
-
+Cash back Project/
+├── Code/                            # Folder tổng chứa phần code VBA và query SQL được tách riêng để dễ theo dõi
+│   ├── Cashback Query.sql           # File chứa toàn bộ query SQL được sử dụng trong Project
+│   └── Cashback VBA.bas             # File chứa toàn bộ code VBA được sử dụng trong Project
+├── Data/
+│   └── Data.xlsx                    # Dữ liệu sample đầu vào để chạy thử cho Project
+├── image/                           # Thư mục chứa hình ảnh minh họa
+├── Report/
+│   └── Cashback Report for date of 2024.06_v1.xlsb   # Báo cáo hoàn thiện đã được đóng gói gồm Code và Data
+└── README.md                        # Tài liệu hướng dẫn
 ### Build
 Write the build Instruction here.
 
