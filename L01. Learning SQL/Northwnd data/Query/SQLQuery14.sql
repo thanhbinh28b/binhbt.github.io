@@ -1,4 +1,5 @@
-﻿	-- Liệt kê ra toàn bộ sản phẩm
+﻿-- 14. Truy vấn con/ Truy vấn lồng nhau
+	-- Liệt kê ra toàn bộ sản phẩm
 	SELECT
 		[ProductID],
 		[ProductName],

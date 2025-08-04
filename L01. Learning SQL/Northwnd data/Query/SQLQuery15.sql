@@ -1,4 +1,5 @@
-﻿-- SQL Query: Thứ tự thực thi trong câu truy vấn SQL và các vấn đề cần lưu ý
+﻿-- 15. Thứ tự thực thi trong câu truy vấn SQL và các vấn đề cần lưu ý
+-- SQL Query: Thứ tự thực thi trong câu truy vấn SQL và các vấn đề cần lưu ý
 SELECT [p].[ProductID], [p].[ProductName] --2
 FROM [dbo].[Products] AS [p]; --1
 

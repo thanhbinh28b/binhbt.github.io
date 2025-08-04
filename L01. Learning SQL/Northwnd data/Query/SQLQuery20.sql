@@ -1,3 +1,4 @@
+-- 20. Cách tạo cơ sở dữ liệu trong SQL Server
 -- VD1:
 CREATE DATABASE mydatabase
 
